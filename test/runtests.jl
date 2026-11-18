@@ -1052,6 +1052,9 @@ end
 end
 
 #=
+
+[jcunwin] I have removed the doctests as they stall and never seem to complete for me.
+    
 @testset "docstrings" begin
     # The doctests drive the real clipboard, so they need `clipboard` in scope
     # alongside the package itself. `docs/make.jl` skips them for that reason:
@@ -1060,7 +1063,7 @@ end
         ClipData,
         :DocTestSetup,
         :(using ClipData, Tables; using InteractiveUtils: clipboard);
-        recursive = false)
+        recursive = true)
 
     doctest(ClipData; manual = false)
 end
